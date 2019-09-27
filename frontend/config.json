@@ -1,0 +1,10 @@
+{
+  "development": {
+    "dockerServerUrl": "http://server:8000",
+    "publicServerUrl": "http://localhost:8000"
+  },
+  "production": {
+    "dockerServerUrl": "",
+    "publicServerUrl": ""
+  }
+}

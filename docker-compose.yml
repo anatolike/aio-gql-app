@@ -1,0 +1,70 @@
+version: '3.2'
+
+services:
+
+  server:
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+      args:
+        requirements: requirements/development.txt
+    container_name: server
+    environment:
+      # use in code
+      - DEBUG=True
+      - SETTINGS_FILE=api.dev.yml
+      - PYTHONUNBUFFERED=1
+    restart: always
+    volumes:
+      - .:/app:delegated
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - 8080:8080
+      - 8081:8081
+    command: make adev
+
+  postgres:
+      image: postgres:10
+      container_name: postgres
+      environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=postgres
+          - POSTGRES_DB=mydbname
+      ports:
+          - 5432:5432
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    image: frontend
+    container_name: frontend
+    ports:
+      - 3000:3000
+      - 3001:3001
+    command: npm start
+    volumes:
+      - ./frontend:/code
+
+  nginx:
+    image: nginx:stable
+    container_name: nginx
+    ports:
+      - 8000:80
+    volumes:
+      - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - frontend
+      - server
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    volumes:
+      - ./config/docker/configs/redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+    ports:
+      - 6380:6380

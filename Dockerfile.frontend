@@ -1,0 +1,10 @@
+FROM node:8.11.2-alpine
+RUN mkdir /code
+WORKDIR /code
+COPY ./frontend/package.json /code
+RUN npm install
+ENV NODE_PATH /code/node_modules
+ENV NODE_ENV development
+ENV NODE_PORT 3000
+ADD ./frontend /code
+EXPOSE 3000

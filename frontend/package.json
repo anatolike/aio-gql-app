@@ -1,0 +1,52 @@
+{
+  "name": "my-razzle-app",
+  "version": "2.0.0-alpha.8",
+  "license": "MIT",
+  "scripts": {
+    "start": "razzle start",
+    "build": "razzle build",
+    "test": "razzle test --env=jsdom",
+    "start:prod": "NODE_ENV=production node build/server.js"
+  },
+  "dependencies": {
+    "@apollo/react-hooks": "^3.0.1",
+    "@material-ui/core": "^4.2.0",
+    "@material-ui/icons": "^4.2.0",
+    "@material-ui/styles": "^4.2.0",
+    "apollo-boost": "^0.1.27",
+    "apollo-cache-inmemory": "^1.2.8",
+    "apollo-client": "^2.6.4",
+    "apollo-link-batch-http": "^1.2.5",
+    "apollo-link-context": "^1.0.12",
+    "apollo-link-error": "^1.1.5",
+    "apollo-link-http": "^1.5.4",
+    "apollo-upload-client": "^10.0.0",
+    "axios": "^0.18.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "classnames": "^2.2.6",
+    "express": "4.17.1",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
+    "js-cookie": "^2.2.0",
+    "jss": "^9.8.7",
+    "moment": "^2.24.0",
+    "node-fetch": "^2.2.0",
+    "nouislider": "^13.1.1",
+    "qs": "^6.7.0",
+    "razzle": "3.0.0",
+    "react": "16.8.6",
+    "react-apollo": "^2.1.11",
+    "react-datetime": "^2.16.3",
+    "react-dom": "16.8.6",
+    "react-jss": "^8.6.1",
+    "react-number-format": "^4.0.6",
+    "react-router-dom": "5.0.1",
+    "react-slick": "^0.23.2",
+    "react-swipeable-views": "^0.13.1",
+    "recharts": "^1.4.2",
+    "use-react-router": "^1.0.6"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1"
+  }
+}

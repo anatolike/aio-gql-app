@@ -1,0 +1,15 @@
+aiohttp==3.5.4
+trafaret_config==2.0.2
+markdown2==2.3.7
+aiopg[sa]==0.16.0
+psycopg2-binary==2.7.7
+alembic==1.0.7
+graphene==2.1.6
+aiohttp-graphql==1.0.0
+aiohttp_session==2.7.0
+aiohttp-security==0.4.0
+aioredis==1.2.0
+PyJWT==1.7.1
+Werkzeug==0.15.5
+aiohttp-cors==0.7.0
+marshmallow==3.0.3
