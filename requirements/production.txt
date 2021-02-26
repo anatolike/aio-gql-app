@@ -1,4 +1,4 @@
-aiohttp==3.5.4
+aiohttp==3.7.4
 trafaret_config==2.0.2
 markdown2==2.3.7
 aiopg[sa]==0.16.0
